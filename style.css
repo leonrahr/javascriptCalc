@@ -1,0 +1,180 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*
+pink: #dea2db
+grey: #a8a3a8
+lGray: #e2dae3
+normal: #28252e
+display: #393245
+bg: #16131c
+*/
+
+.calc{
+    height: 550px;
+    width: 400px;
+    background: #16131c;
+    color: white;
+    margin: 50px auto;
+    border-radius: 40px;
+    font-family: Arial;
+    padding: 16px;
+}
+
+.calc__display{
+    height: 140px;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.calc__display input {
+    width: 100%;
+    font-size: 4rem;
+    margin: 0;
+    outline: none;
+    border: none;
+    background: inherit;
+    color: #fff;
+
+}
+
+
+.buttons{
+    display: grid;
+    grid-template-areas:
+    "ac breckets percent del"
+    "seven eight nine mmultipl"
+    "four five six minus"
+    "one two trhee plus"
+    "zero zero dot answer";
+    grid-gap: 6px;
+    justify-items: center;
+}
+
+.btn{
+    height: 70px;
+    width: 70px;
+    background: #28252e;
+    border-radius: 70px;
+    cursor: pointer;
+    line-height: 70px;
+    text-align: center;
+    user-select: none;
+}
+
+.zero{
+    grid-area: zero;
+    width: 95%;
+}
+
+.pink{
+    background: #dea2db;
+}
+
+.grey{
+    background: #a8a3a8;
+}
+
+.lGrey{
+    background: #e2dae3;
+}
+
+.btn:hover{
+    filter: brightness(120%);
+}
+
+.btn:active{
+    filter: brightness(90%);
+}
+
+@media (max-width:400px) {
+    .btn{
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        line-height: 50px;
+    }
+    .calc{
+        width: 300px;
+        height: 500px;
+    }
+}
